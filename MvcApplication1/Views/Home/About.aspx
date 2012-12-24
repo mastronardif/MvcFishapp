@@ -14,7 +14,7 @@
                                   PIN: <input type="text" name="pin" maxlength="4" size="4"><br>
 
          <input type="submit" value="Run the SH" />
-         <%: Html.ActionLink("Run the spread sheet", "Calculate")%>
+         <%: Html.ActionLink("Run the spread sheet", "Calculate", "Home")%>
     </p>
 
 <%= ViewData["Results"] %>

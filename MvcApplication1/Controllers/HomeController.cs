@@ -14,11 +14,11 @@ namespace MvcApplication1.Controllers
         {
             ViewData["Message"] = "Welcome to ASP.NET MVC!";
 
-            mySGClass1 gg = new mySGClass1();
-            gg._path = Server.MapPath("~/App_Data/01RFishheads.xls"); ;
-            string sss = gg.MyOpenSheet();
+            //mySGClass1 gg = new mySGClass1();
+            //gg._path = Server.MapPath("~/App_Data/01RFishheads.xls"); ;
+            //string sss = gg.MyOpenSheet();
             
-            ViewData["Message"] = sss;
+            //ViewData["Message"] = sss;
             return View();
         }
 
@@ -49,7 +49,28 @@ namespace MvcApplication1.Controllers
 
         public ActionResult About()
         {
-            return View();
+            //return Calculate();
+
+            mySGClass1 gg = new mySGClass1();
+            gg._path = Server.MapPath("~/App_Data/01RFishheads.xls");
+
+            //string F8_value = Request.Form["F8"];
+            string F8_value = (string.IsNullOrEmpty(Request.Form["F8"]) ? "1" : Request.Form["F8"]);
+            string F9_value = (string.IsNullOrEmpty(Request.Form["F9"]) ? "60" : Request.Form["F9"]);
+            string F10_value = (string.IsNullOrEmpty(Request.Form["F10"]) ? "300000" : Request.Form["F10"]);
+
+            string results = gg.MyGetResults(F8_value, F9_value, F10_value);
+
+            ViewData["Results"] = results;
+
+            string sss = gg.MyOpenSheet();
+            ViewData["Message"] = gg.getInput(); //" the input";
+            ViewData["F8"] = F8_value;
+            ViewData["F9"] = F9_value; //" the input";
+            ViewData["F10"] = F10_value;
+
+            return View("Calculate");
+            //return View();
         }
 
     }
