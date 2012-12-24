@@ -261,7 +261,7 @@ namespace MvcApplication1.Models
 }
 
 /*******************
-Date: 12/23/12 941pm
+Date: 12/23/12 10:00pm
  * my notes.
  * 
  * 

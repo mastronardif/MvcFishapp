@@ -27,7 +27,8 @@ namespace MvcApplication1.Controllers
         {
 
             mySGClass1 gg = new mySGClass1();
-            gg._path = Server.MapPath("~/App_Data/01RFishheads.xls"); ;
+            gg._path = Server.MapPath("~/App_Data/01RFishheads.xls");
+
             //string F8_value = Request.Form["F8"];
             string F8_value  = (string.IsNullOrEmpty(Request.Form["F8"])  ?      "1" : Request.Form["F8"]);
             string F9_value  = (string.IsNullOrEmpty(Request.Form["F9"])  ?     "60" : Request.Form["F9"]);
