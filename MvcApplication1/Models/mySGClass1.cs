@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using System.Text;
+using System.IO;
 
 namespace MvcApplication1.Models
 {
     public class mySGClass1
     {
+        public string _path = string.Empty;
         string _F8  = string.Empty;
         string _F9  = string.Empty;
         string _F10 = string.Empty;
@@ -148,7 +151,8 @@ namespace MvcApplication1.Models
                 SpreadsheetGear.IWorkbookSet workbookSet = SpreadsheetGear.Factory.GetWorkbookSet();
                 SpreadsheetGear.IWorkbook workbook = workbookSet.Workbooks.Add();
 
-                workbook = workbookSet.Workbooks.Open(@"C:\FxM\downloads\01RFishheads.xls");
+                //workbook = workbookSet.Workbooks.Open(@"C:\FxM\downloads\01RFishheads.xls");
+                workbook = workbookSet.Workbooks.Open(_path);
 
                 int icnt = workbook.Worksheets.Count;
                 icnt = (((workbook.ActiveSheet).Workbook).Sheets).Count;
@@ -203,7 +207,13 @@ namespace MvcApplication1.Models
                 SpreadsheetGear.IWorkbookSet workbookSet = SpreadsheetGear.Factory.GetWorkbookSet();
                 SpreadsheetGear.IWorkbook workbook = workbookSet.Workbooks.Add();
 
-                workbook = workbookSet.Workbooks.Open(@"C:\FxM\downloads\01RFishheads.xls");
+                //string path =  Server.MapPath("~/App_Data/01RFishheads.xls");
+                System.IO.FileInfo file = new System.IO.FileInfo(_path);
+                FileStream fs = new FileStream(_path, FileMode.Open);
+
+                // fm 12 23/12 workbook = workbookSet.Workbooks.Open(@"C:\FxM\downloads\01RFishheads.xls");
+                workbook = workbookSet.Workbooks.OpenFromStream(fs);
+
 
                 int icnt = workbook.Worksheets.Count;
                 icnt = (((workbook.ActiveSheet).Workbook).Sheets).Count;

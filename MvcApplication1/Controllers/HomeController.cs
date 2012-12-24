@@ -15,7 +15,9 @@ namespace MvcApplication1.Controllers
             ViewData["Message"] = "Welcome to ASP.NET MVC!";
 
             mySGClass1 gg = new mySGClass1();
+            gg._path = Server.MapPath("~/App_Data/01RFishheads.xls"); ;
             string sss = gg.MyOpenSheet();
+            
             ViewData["Message"] = sss;
             return View();
         }
@@ -23,7 +25,9 @@ namespace MvcApplication1.Controllers
          [HttpPost]
         public ActionResult Calculate()
         {
+
             mySGClass1 gg = new mySGClass1();
+            gg._path = Server.MapPath("~/App_Data/01RFishheads.xls"); ;
             //string F8_value = Request.Form["F8"];
             string F8_value  = (string.IsNullOrEmpty(Request.Form["F8"])  ?      "1" : Request.Form["F8"]);
             string F9_value  = (string.IsNullOrEmpty(Request.Form["F9"])  ?     "60" : Request.Form["F9"]);
