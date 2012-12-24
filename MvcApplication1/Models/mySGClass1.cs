@@ -266,6 +266,41 @@ Date: 12/12/12
  * 
  * 
  * 
-
+history
+ * 
+ *   Id CommandLine
+  -- -----------
+   5 dor
+   6 dir
+   7 cd .\MvcFishapp
+   8 DIR
+   9 HISTOY
+  10 history
+  11 dir
+  12 https://github.com/mastronardif/MvcFishapp.git
+  13 ssh  https://github.com/mastronardif/MvcFishapp.git
+  14 touch README.md
+  15 git init
+  16 git commit -m "first commit"
+  17 git add .
+  18 git commit -m "all files "
+  19 git add origin https://github.com/mastronardif/MvcFishapp.git
+  20 git remote add origin https://github.com/mastronardif/MvcFishapp.git
+  21 git push -u origin master
+  22 git remote add appharbor https://mastronardif@appharbor.com/fishapp.git
+  23 git push appharbor master
+  24 git add .
+  25 git commit -m "all files "
+  26 git add origin https://github.com/mastronardif/MvcFishapp.git
+  27 hsitory
+  28 history
+  29 git push -u origin master
+  30 git add .
+  31 history
+  32 git commit -m "all files "
+  33 git add origin https://github.com/mastronardif/MvcFishapp.git
+  34 git remote add origin https://github.com/mastronardif/MvcFishapp.git
+  35 git push -u origin master
+  36 git push appharbor master
 
 **************************/
